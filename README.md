@@ -1,0 +1,1 @@
+1. set username and access token in .env file (i.e. `ACCESS_TOKEN=blah` and `USERNAME=bleh`)
