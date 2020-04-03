@@ -66,8 +66,8 @@ class TilesetSource
     puts "Working..."
 
     deleteSource = HTTP.delete("#{ENV['BASE_URL']}/sources/#{ENV['USERNAME']}/#{result[:source_id]}", :params => {:access_token => ENV['ACCESS_TOKEN']})
-    ## Tilesets API returns 201 when successfully deleted
-    if deleteSource.code != 201
+    ## Tilesets API returns 204 when successfully deleted
+    if deleteSource.code != 204
       puts "Uh oh! You're hitting a #{deleteSource.status} error. Look into the docs, then try running this script again. Here's the full response: \n #{deleteSource.body.to_s}"
     else
       puts "Success! Here are the details you seek: \n #{deleteSource.body.to_s}" 

@@ -19,7 +19,7 @@ USERNAME={your-mapbox-username}
 BASE_URL=https://api.mapbox.com/tilesets/v1
 ``` 
 3. Run `bundle install` in the repo directory.
-4. Run `ruby index.rb`.
+4. Run `ruby lib/index.rb`.
 
 ### Documentation
 Your best bet is going to be to read the [Tilesets API documentation](https://docs.mapbox.com/api/maps/#tilesets). This CLI mirrors the functionality offered there, including all available parameters. The following endpoints are available in this CLI:
