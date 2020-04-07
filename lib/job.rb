@@ -27,6 +27,8 @@ class Job
     else
       puts "Success! Here are the details you seek: \n #{allJobs.body.to_s}" 
     end
+
+    Index.restart
   end
 
   def self.retrieve_single
@@ -45,5 +47,7 @@ class Job
     else
       puts "Success! Here are the details you seek: \n #{singleJobStatus.body.to_s}" 
     end
+    
+    Index.restart
   end
 end

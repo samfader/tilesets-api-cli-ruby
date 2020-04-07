@@ -30,6 +30,8 @@ class Tileset
     else
       puts "Success! Here are the details you seek: \n #{createTileset.body.to_s}"
     end
+
+    Index.restart
   end
 
   def self.publish
@@ -48,6 +50,8 @@ class Tileset
     else
       puts "Success! Here are the details you seek: \n #{publishTileset.body.to_s}" 
     end
+
+    Index.restart
   end
 
   def self.status
@@ -66,5 +70,7 @@ class Tileset
     else
       puts "Success! Here are the details you seek: \n #{tilesetStatus.body.to_s}" 
     end
+
+    Index.restart
   end
 end

@@ -22,6 +22,8 @@ class Recipe
     else
       puts "Success! Here are the details you seek: \n #{validateRecipe.body.to_s}"
     end
+    
+    Index.restart
   end
 
   def self.update
@@ -41,6 +43,8 @@ class Recipe
     else
       puts "Success! Here are the details you seek: \n #{updateRecipe.body.to_s}"
     end
+
+    Index.restart
   end
 
   def self.retrieve
@@ -56,5 +60,7 @@ class Recipe
     else
       puts "Success! Here are the details you seek: \n #{retrieveRecipe.body.to_s}" 
     end
+
+    Index.restart
   end
 end

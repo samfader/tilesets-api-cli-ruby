@@ -28,6 +28,8 @@ class TilesetSource
       The total size of your source is: #{createSource.parse["source_size"] / 1000000}MB \n
       The total size of the file you uploaded is: #{createSource.parse["file_size"] / 1000000}MB"
     end
+
+    Index.restart
   end
 
   def self.retrieve
@@ -43,6 +45,8 @@ class TilesetSource
     else
       puts "Success! Here are the details you seek: \n #{retrieveSource.body.to_s}" 
     end
+
+    Index.restart
   end
 
   def self.list
@@ -54,6 +58,8 @@ class TilesetSource
     else
       puts "Success! Here are the details you seek: \n #{listSources.body.to_s}" 
     end
+
+    Index.restart
   end
 
   def self.delete
@@ -72,5 +78,7 @@ class TilesetSource
     else
       puts "Success! Here are the details you seek: \n #{deleteSource.body.to_s}" 
     end
+
+    Index.restart
   end
 end
