@@ -5,12 +5,13 @@ require_relative 'tileset_source'
 require_relative 'tileset'
 require_relative 'job'
 require_relative 'recipe'
+require_relative 'converter'
 
 class Index
-  def self.choice
-    prompt = TTY::Prompt.new(enable_color: true)
+  @prompt = TTY::Prompt.new(enable_color: true)
 
-    result = prompt.collect do
+  def self.choice
+    result = @prompt.collect do
     
       key(:choice).select("What would you like to do?", help: "There are a lot of options - keep scrolling") do |menu|
         menu.choice 'Create a tileset source', 1
@@ -25,6 +26,7 @@ class Index
         menu.choice 'Retrieve a tileset\'s recipe', 10
         menu.choice 'List information about all jobs for a tileset', 11
         menu.choice 'Retrieve information about a single tileset job', 12
+        menu.choice 'Convert GeoJSON to line-delimited GeoJSON (requires Tippecanoe)', 13
       end
     end
 
@@ -53,6 +55,8 @@ class Index
       Job.list_all
     when 12
       Job.retrieve_single
+    when 13
+      Converter.convert
     else
       "Error: not found"
     end
