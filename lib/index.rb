@@ -61,6 +61,18 @@ class Index
       "Error: not found"
     end
   end
+
+  def self.restart
+    result = @prompt.collect do
+      key(:restart).yes?('Do you want to make another request?')
+    end
+
+    if result[:restart] == true
+      choice
+    else
+      ## exit
+    end
+  end
 # def self.error_handling(endpoint)
 # ## add universal error handling
 #   if endpoint.code != 200
