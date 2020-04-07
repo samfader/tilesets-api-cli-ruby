@@ -1,7 +1,6 @@
 require 'tty-prompt'
 require 'dotenv/load'
 require 'http'
-require 'logger'
 
 class Tileset
   @prompt = TTY::Prompt.new(enable_color: true)
