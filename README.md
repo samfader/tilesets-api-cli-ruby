@@ -23,7 +23,7 @@ BASE_URL=https://api.mapbox.com/tilesets/v1
 3. Run `bundle install` in the repo directory.
 4. Run `ruby lib/index.rb`.
 
-* By properly scoped access token, I mean **tilesets:read** and **tilesets:write**. Refer to the [Mapbox docs](https://docs.mapbox.com/api/maps/#tilesets) for more details.
+\* By properly scoped access token, I mean **tilesets:read** and **tilesets:write**. Refer to the [Mapbox docs](https://docs.mapbox.com/api/maps/#tilesets) for more details.
 
 ### Documentation
 #### Endpoints
