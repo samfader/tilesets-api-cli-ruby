@@ -16,7 +16,7 @@ class Tileset
 
     puts "Working..."
 
-    recipe = File.open(result[:recipe])
+    recipe = File.open(result[:recipe].strip)
     createTileset = HTTP.use(logging: {logger: Logger.new(STDOUT)}).headers(:content_type => "application/json").post("#{ENV['BASE_URL']}/#{result[:tileset_id]}", :params => {:access_token => ENV['ACCESS_TOKEN']}, 
     :json => {
       :recipe => JSON.load(recipe),

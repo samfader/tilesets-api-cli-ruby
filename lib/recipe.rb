@@ -14,7 +14,7 @@ class Recipe
     puts "Working..."
 
     validateRecipe = HTTP[:accept => "application/json"].put("#{ENV['BASE_URL']}/validateRecipe}", :params => {:access_token => ENV['ACCESS_TOKEN']} ,:form => {
-        :file   => HTTP::FormData::File.new(result[:recipe])
+        :file   => HTTP::FormData::File.new(result[:recipe].strip)
       })
 
     if validateRecipe.code != 200
@@ -35,7 +35,7 @@ class Recipe
     puts "Working..."
 
     updateRecipe = HTTP[:accept => "application/json"].patch("#{ENV['BASE_URL']}/#{result[:tileset_id]}/recipe", :params => {:access_token => ENV['ACCESS_TOKEN']} ,:form => {
-        :file   => HTTP::FormData::File.new(result[:recipe])
+        :file   => HTTP::FormData::File.new(result[:recipe].strip)
       })
 
     if updateRecipe.code != 200

@@ -5,7 +5,6 @@ require 'http'
 class TilesetSource
   @prompt = TTY::Prompt.new(enable_color: true)
   def self.create
-    puts "uhhh"
     # /Users/samfader/mapbox/tilesets-api-ruby/nyc_pois.geojson.ld
     result = @prompt.collect do
       key(:file).ask('Enter the full path (i.e. /Users/name/folder/file.geojson.ld) to your line-delimited GeoJSON file:')
@@ -17,6 +16,7 @@ class TilesetSource
 
     createSource = HTTP[:accept => "multipart/form-data"].post("#{ENV['BASE_URL']}/sources/#{ENV['USERNAME']}/#{result[:source_id]}", :params => {:access_token => ENV['ACCESS_TOKEN']} ,:form => {
         :file   => HTTP::FormData::File.new(result[:file])
+        :file   => HTTP::FormData::File.new(result[:file].strip)
       })
 
     if createSource.code != 200

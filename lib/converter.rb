@@ -12,7 +12,7 @@ class Converter
     end
 
     ## executes as shell command
-    `tippecanoe-json-tool #{result[:in_file]} > #{result[:in_file] + ".ld"}`
+    `tippecanoe-json-tool #{result[:in_file].strip} > #{result[:in_file].strip + ".ld"}`
 
     Index.restart
   end
