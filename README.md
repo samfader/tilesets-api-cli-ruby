@@ -3,6 +3,8 @@
 - [A Ruby CLI for Mapbox's Tilesets API](#a-ruby-cli-for-mapboxs-tilesets-api)
   - [Getting started](#getting-started)
   - [Documentation](#documentation)
+    - [Endpoints](#endpoints)
+    - [Converting GeoJSON to line-delimited GeoJSON](#converting-geojson-to-line-delimited-geojson)
   - [Advanced](#advanced)
     - [Logging](#logging)
   - [Contributing](#contributing)
@@ -22,6 +24,7 @@ BASE_URL=https://api.mapbox.com/tilesets/v1
 4. Run `ruby lib/index.rb`.
 
 ### Documentation
+#### Endpoints
 Your best bet is going to be to read the [Tilesets API documentation](https://docs.mapbox.com/api/maps/#tilesets). This CLI mirrors the functionality offered there, including all available parameters. The following endpoints are available in this CLI:
 
 - [Create a tileset source](https://docs.mapbox.com/api/maps/#create-a-tileset-source)
@@ -41,6 +44,9 @@ Your best bet is going to be to read the [Tilesets API documentation](https://do
 The following endpoints **are not yet** available in this CLI:
 
 - [View the Tilesets API global queue](https://docs.mapbox.com/api/maps/#view-the-tilesets-api-global-queue)
+
+#### Converting GeoJSON to line-delimited GeoJSON
+You may have [noticed](https://docs.mapbox.com/help/troubleshooting/tileset-sources/#convert-geojson-to-line-delimited-geojson) that the Tilesets API requires **line-delimited GeoJSON** as input. Have no fear - this tool can process the conversion for you using [Tippecanoe's tippecanoe-json-tool](https://github.com/mapbox/tippecanoe#tippecanoe-json-tool). Make sure you [install Tippecanoe](https://github.com/mapbox/tippecanoe#installation), then run the last option in this tool to convert.
   
 ### Advanced
 #### Logging
