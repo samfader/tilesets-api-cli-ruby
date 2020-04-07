@@ -14,4 +14,6 @@ class Converter
     ## executes as shell command
     `tippecanoe-json-tool #{result[:in_file]} > #{result[:in_file] + ".ld"}`
   end
+
+  Index.restart
 end
