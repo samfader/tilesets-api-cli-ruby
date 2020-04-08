@@ -10,7 +10,7 @@ class Tileset
       key(:tileset_id).ask('Enter the ID for the tileset to be created or replaced:', help: "The ID is composed of your username followed by a period and the tileset\'s unique name")
       key(:recipe).ask('Enter the full path (i.e. /Users/name/folder/recipe.json) to your recipe:')
       key(:name).ask('Name of your tileset:', help: "Limited to 64 characters")
-      key(:private).ask('Optional: Do you want your tileset to be public or limited to your access tokens only?', help: 'True or false - defaults to true', default: true)
+      key(:private).yes?('Optional: Do you want your tileset to be public? If not, your tileset will be private and only accessible with an access token in your account')
       key(:description).ask('Optional: Description of your tileset:', help: 'Limited to 64 characters')
     end
 
